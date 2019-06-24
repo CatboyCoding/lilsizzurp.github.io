@@ -52,45 +52,49 @@
     </head>
     <body>
         <div class="tab">
-        <button class="tablinks active" onclick="changeTab(event, 'Home')">Home</button>
-        <button class="tablinks" onclick="changeTab(event, 'About')">About</button>
-        <button class="tablinks" onclick="changeTab(event, 'Contact')">Contact</button>
+            <button class="tablinks active" onclick="changeTab(event, 'Home')">Home</button>
+            <button class="tablinks" onclick="changeTab(event, 'About')">About</button>
+            <button class="tablinks" onclick="changeTab(event, 'Contact')">Contact</button>
         </div>
 
         <div id="Home" class="tabcontent" style="display: block;">
-        <h3>Home</h3>
-        <p>This is the official website of Lil Sizzurp.</p>
+            <h3>Home</h3>
+            <p>This is the official website of Lil Sizzurp.</p>
         </div>
 
         <div id="About" class="tabcontent">
-        <h3>About Me</h3>
-        <p>I am a youtuber/freelance developer.</p>
-        <p><a href="https://youtube.com/LilSizzurp/">YouTube</a></p>
-        <p><a href="https://discord.gg/6AkUpjF">Discord</a></p>
-        <p><a href="https://steamcommunity.com/id/Lil_Sizzurp/">Steam</a></p>
-        <p><a href="https://steamcommunity.com/id/LilSizzurp_/">Steam #2</a></p>
+            <h3>About Me</h3>
+            <p>I am a youtuber/freelance developer.</p>
         </div>
 
         <div id="Contact" class="tabcontent">
-        <h3>Contact</h3>
-        <p>E-Mail: <a href="mailto:lilsizzurp@protonmail.com">lilsizzurp@protonmail.com</a>.</p>
-        <p>Discord: Lil Sizzurp#0001</p>
+            <h3>Contact</h3>
+            <p>E-Mail: <a href="mailto:lilsizzurp@protonmail.com">lilsizzurp@protonmail.com</a>.</p>
+            <p>Discord: Lil Sizzurp#0001</p>
+        </div>
+
+        <div id="Links" class="tabcontent">
+            <h3>Links</h3>
+            <p><a href="https://youtube.com/LilSizzurp/">YouTube</a></p>
+            <p><a href="https://discord.gg/6AkUpjF">Discord</a></p>
+            <p><a href="https://steamcommunity.com/id/Lil_Sizzurp/">Steam</a></p>
+            <p><a href="https://steamcommunity.com/id/LilSizzurp_/">Steam #2</a></p>
         </div>
 
         <script>
-        function changeTab(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-        }
+            function changeTab(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
         </script>
     </body>
 </html> 
