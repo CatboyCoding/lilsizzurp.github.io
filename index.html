@@ -1,128 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-* {
-  color: white;
-}
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body {font-family: Arial;}
 
-body {
-  font-family: 'Montserrat Light', sans-serif;
-  background: #34495e;
-  color: #bdc3c7;
-  padding-top: 30px;
-  overflow: hidden;
-}
+        /* Style the tab */
+        .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        }
 
-h1 {
-padding: 0;
-}
+        /* Style the buttons inside the tab */
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        }
 
-ul {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        background-color: #ddd;
+        }
 
-li {
-  float: left;
-}
+        /* Create an active/current tablink class */
+        .tab button.active {
+        background-color: #ccc;
+        }
 
-li span {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: 14px 16px;
-}
+        /* Style the tab content */
+        .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        }
+        </style>
+        <title>Lil Sizzurp</title>
+    </head>
+    <body>
+        <div class="tab">
+        <button class="tablinks active" onclick="changeTab(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="changeTab(event, 'About')">About</button>
+        <button class="tablinks" onclick="changeTab(event, 'Contact')">Contact</button>
+        </div>
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: 14px 16px;
-}
+        <div id="Home" class="tabcontent" style="display: block;">
+        <h3>Home</h3>
+        <p>This is the official website of Lil Sizzurp.</p>
+        </div>
 
-li a:hover {
-  background-color: #111;
-}
+        <div id="About" class="tabcontent">
+        <h3>About Me</h3>
+        <p>I am a youtuber/freelance developer.</p>
+        <p><a href="https://youtube.com/LilSizzurp/">YouTube</a></p>
+        <p><a href="https://discord.gg/6AkUpjF">Discord</a></p>
+        <p><a href="https://steamcommunity.com/id/Lil_Sizzurp/">Steam</a></p>
+        <p><a href="https://steamcommunity.com/id/LilSizzurp_/">Steam #2</a></p>
+        </div>
 
-li .active {
-  background-color: #444 !important;
-  cursor: default;
-  pointer-events: none;
-}
-</style>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-<ul>
-  <li><span>Lil Sizzurp</span></li>
-  <li><a href="#home" class="active">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
-<a name="home"></a>
-<h1>Welcome!</h1>
-<p>This is my personal website.</p>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<a name="news"></a>
-<h1>News</h1>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<a name="contact"></a>
-<h1>Contact</h1>
-<p>Email: lilsizzurp@protonmail.com</p>
-<p>Discord: Lil Sizzurp#0001</p>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<a name="about"></a>
-<h1>About</h1>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<script>
-$('html,body').animate({scrollTop: window.top},'slow');
-for(var elem of $("a")) {
-  $(elem).on("click", function() {
-    for(var act of $(".active")) {
-   	  act.classList.remove("active");
-    }
-    this.classList.add("active");
-    
-    var anc = this.href.replace("http://"+document.location.host+"/", "").replace("#", "");
-    
-    var obj = $("a[name='"+ anc +"']");
-    console.log(anc)
-    console.log(obj);
-    $('html,body').animate({scrollTop: obj.offset().top - 100},'slow');
-  });
-}
-</script>
-</body>
-</html>
+        <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>E-Mail: <a href="mailto:lilsizzurp@protonmail.com">lilsizzurp@protonmail.com</a>.</p>
+        <p>Discord: Lil Sizzurp#0001</p>
+        </div>
+
+        <script>
+        function changeTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+        </script>
+    </body>
+</html> 
