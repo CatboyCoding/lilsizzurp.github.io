@@ -1,10 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lil Sizzurp</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
+  font-family: 'Montserrat Light', sans-serif;
+  background: #34495e;
+  color: #bdc3c7;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li span {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+li .active {
+  background-color: #444 !important;
+  cursor: default;
+  pointer-events: none;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-  <h1>Welcome!</h1>
-  <footer>Test</footer>
+<ul>
+  <li><span>Lil Sizzurp</span></li>
+  <li><a href="#home" class="active">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<h1>Welcome!</h1>
+<a name="home"></a>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<h1>News</h1>
+<a name="news"></a>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<h1>Contact</h1>
+<a name="contact"></a>
+<p>Email: lilsizzurp@protonmail.com</p>
+<p>Discord: Lil Sizzurp#0001</p>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<h1>About</h1>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<a name="about"></a>
+<script>
+$('html,body').animate({scrollTop: window.top},'slow');
+for(var elem of $("a")) {
+  $(elem).on("click", function() {
+    for(var act of $(".active")) {
+   	  act.classList.remove("active");
+    }
+    this.classList.add("active");
+    
+    var anc = this.href.replace("http://"+document.location.host+"/", "").replace("#", "");
+    
+    var obj = $("a[name='"+ anc +"']");
+    console.log(anc)
+    console.log(obj);
+    $('html,body').animate({scrollTop: obj.offset().top - 120},'slow');
+  });
+}
+</script>
 </body>
 </html>
